@@ -1,5 +1,6 @@
-<a href="#" class="list-group-item clearfix"
-[routerLink]="['/recipe', index]"
+<a  class="list-group-item clearfix"
+[routerLink]="[index]"
+routerLinkActive="active"
  >
   <div class="pull-left">
     <h4 class="list-group-item-heading">{{ recipes.name }}</h4>
@@ -14,4 +15,3 @@
   /></span>
 </a>
 
-<!-- (click)="onSelected()" -->
