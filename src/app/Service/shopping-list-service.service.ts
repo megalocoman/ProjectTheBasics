@@ -4,6 +4,8 @@ import { Ingredient } from '../Model/ingredient.model';
 
 export class ShoppingListServiceService {
 
+  startedEditing= new Subject<number>();
+
   ingredientChanged = new Subject<Ingredient[]>();
 
   ingredients: Ingredient[]= [
@@ -17,6 +19,10 @@ export class ShoppingListServiceService {
 
   }
 
+  getIngredient(index: number){
+    return this.ingredients[index];
+  }
+
   addIngredient(ingredient: Ingredient){
     this.ingredients.push(ingredient);
     this.ingredientChanged.next(this.ingredients.slice());
@@ -26,5 +32,16 @@ export class ShoppingListServiceService {
 
     this.ingredients.push(...ingredients);
     this.ingredientChanged.next(this.ingredients.slice());
+  }
+
+  updateIngredient(index: number, newIngredient: Ingredient){
+    this.ingredients[index] = newIngredient;
+    this.ingredientChanged.next(this.ingredients.slice())
+  }
+
+  deleteIngredient(index: number){
+    this.ingredients.splice(index, 1);
+    this.ingredientChanged.next(this.ingredients.slice());
+
   }
 }
