@@ -18,7 +18,7 @@
           <li>
             <a  (click)="onIngredientToShoppingList()">To shopping list </a>
             <a [routerLink]="['edit']" >Edit Recipe </a>
-            <a >Add Recipe </a>
+            <a (click)="onDeleteRecipe()">Delete Recipe </a>
           </li>
         </ul>
     </div>
