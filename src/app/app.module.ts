@@ -18,8 +18,10 @@ import { RecipeStartComponent } from './Features/recipes/recipe-start/recipe-sta
 import { RecipeEditComponent } from './Features/recipes/recipe-edit/recipe-edit.component';
 import { RecipeService } from './Service/recipe.service';
 import { AuthComponent } from './auth/auth.component';
-import { loadingspinnerComponent } from './directives/shared/loading-spinner/loading-spinner.component';
+import { loadingspinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
+import { AlertComponent } from './shared/alert/alert.component';
+import { PlaceholderDirective } from './shared/placeholder.directive';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { AuthInterceptorService } from './auth/auth-interceptor.service';
     RecipeStartComponent,
     RecipeEditComponent,
     AuthComponent,
-    loadingspinnerComponent
+    loadingspinnerComponent,
+    AlertComponent,
+    PlaceholderDirective
   ],
   imports: [
     BrowserModule,
@@ -44,7 +48,12 @@ import { AuthInterceptorService } from './auth/auth-interceptor.service';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [ShoppingListServiceService, RecipeService, {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true}],
+  providers: [ShoppingListServiceService, RecipeService, { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true }],
   bootstrap: [AppComponent]
+  // only for version under 9 or older
+  // ,
+  // entryComponents:[
+  //   AlertComponent
+  // ]
 })
 export class AppModule { }
