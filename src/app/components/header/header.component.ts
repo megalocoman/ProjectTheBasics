@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   constructor(
     private httpRequestData: DataStorageService,
     private authService: AuthService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.userSub = this.authService.user.subscribe((user) => {
@@ -33,5 +33,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   onFetchData() {
     this.httpRequestData.fetchRecipe().subscribe();
+  }
+
+  onLogout() {
+    this.authService.logout();
   }
 }
