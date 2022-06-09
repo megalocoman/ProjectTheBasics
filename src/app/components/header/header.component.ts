@@ -15,8 +15,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   constructor(
     private httpRequestData: DataStorageService,
-    private authService: AuthService,
-    private router: Router
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -38,7 +37,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   onLogout() {
-    this.isAuthenticated = false;
-    this.router.navigate(['/auth']);
+    this.authService.logout();
   }
 }
