@@ -19,7 +19,12 @@
       </ul>
       <ul class="nav navbar-bar navbar-right">
         <li>
-          <a style="cursor: pointer" *ngIf="isAuthenticated">Logout</a>
+          <a
+            style="cursor: pointer"
+            *ngIf="isAuthenticated"
+            (click)="onLogout()"
+            >Logout</a
+          >
         </li>
       </ul>
       <ul class="nav navbar-bar navbar-right">

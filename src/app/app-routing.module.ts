@@ -9,7 +9,7 @@ import { RecipesComponent } from './Features/recipes/recipes.component';
 import { ShoppinglistComponent } from './Features/shoppinglist/shoppinglist.component';
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/recipe', pathMatch: 'full' },
+  { path: '', redirectTo: '/auth', pathMatch: 'full' },
   {
     path: 'recipe',
     component: RecipesComponent,
