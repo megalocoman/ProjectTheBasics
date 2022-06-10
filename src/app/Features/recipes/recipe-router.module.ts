@@ -1,15 +1,15 @@
-import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from "@angular/router";
-import { AuthGuardService } from "src/app/auth/auth.guard";
-import { RecipeEditComponent } from "./recipe-edit/recipe-edit.component";
-import { RecipesResolverService } from "./recipe-resolver.service";
-import { RecipeStartComponent } from "./recipe-start/recipe-start.component";
-import { RecipedetailComponent } from "./recipedetail/recipedetail.component";
-import { RecipesComponent } from "./recipes.component";
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { AuthGuardService } from 'src/app/auth/auth.guard';
+import { RecipeEditComponent } from './recipe-edit/recipe-edit.component';
+import { RecipesResolverService } from './recipe-resolver.service';
+import { RecipeStartComponent } from './recipe-start/recipe-start.component';
+import { RecipedetailComponent } from './recipedetail/recipedetail.component';
+import { RecipesComponent } from './recipes.component';
 
 const routes: Routes = [
   {
-    path: 'recipe',
+    path: '',
     component: RecipesComponent,
     canActivate: [AuthGuardService],
     children: [
@@ -31,8 +31,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class RecipesroutingModule {
-
-}
+export class RecipesroutingModule {}

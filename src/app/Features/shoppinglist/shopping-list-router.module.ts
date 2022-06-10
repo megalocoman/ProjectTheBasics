@@ -1,15 +1,11 @@
-import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from "@angular/router";
-import { ShoppinglistComponent } from "./shoppinglist.component";
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { ShoppinglistComponent } from './shoppinglist.component';
 
-const routes: Routes = [
-  { path: 'shopping-list', component: ShoppinglistComponent }
-];
+const routes: Routes = [{ path: '', component: ShoppinglistComponent }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class shoppingListroutingModule {
-
-}
+export class shoppingListroutingModule {}
