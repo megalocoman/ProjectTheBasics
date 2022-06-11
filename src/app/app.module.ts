@@ -29,5 +29,6 @@ import { CoreModule } from './core.module';
   // entryComponents:[
   //   AlertComponent
   // ]
+  providers: [LoggingService],
 })
 export class AppModule {}
