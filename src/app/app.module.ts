@@ -1,3 +1,4 @@
+import { LoggingService } from './logging.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -22,6 +23,7 @@ import { CoreModule } from './core.module';
     CoreModule,
   ],
   bootstrap: [AppComponent],
+
   // only for version under 9 or older
   // ,
   // entryComponents:[
