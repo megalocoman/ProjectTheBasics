@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { Ingredient } from 'src/app/Model/ingredient.model';
 
 import { ShoppingListServiceService } from 'src/app/Service/shopping-list-service.service';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-shoppinglist',
@@ -16,7 +17,8 @@ export class ShoppinglistComponent implements OnInit, OnDestroy {
 
   constructor(
     private sLService: ShoppingListServiceService,
-    private loggingService: LoggingService
+    private loggingService: LoggingService,
+    private store: Store<{ shoppingList: { ingredients: Ingredient[] } }>
   ) {}
 
   ngOnInit(): void {
